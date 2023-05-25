@@ -20,21 +20,26 @@ function TodoList(){
         setInputList("")
     }
 
-
-    return(
-        <>
+    return (
+      <>
         <div className="container-input">
-            <div className="wrapper">
+          <div className="wrapper">
             <h1>Todo List App</h1>
-                <form onSubmit={handleClick}>
-                    <input type="text" value={addInputList} onChange={(e) => setInputList(e.target.value)} placeholder="Input Your Todo Here!" required />
-                    <button className="btn-add">Add Todo</button>
-                </form>
-            </div>
+            <form onSubmit={handleClick}>
+              <input
+                type="text"
+                value={addInputList}
+                onChange={(e) => setInputList(e.target.value)}
+                placeholder="Input Your Todo Here!"
+                required
+              />
+              <button className="btn-add">Add Todo</button>
+            </form>
+          </div>
         </div>
 
-        </>
-    )
+      </>
+    );
 }
 
 export default TodoList

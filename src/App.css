@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-.container {
+.container-input {
   /* background-color: aqua; */
   display: flex;
   justify-content: center;

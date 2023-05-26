@@ -105,3 +105,31 @@ form input {
   cursor: pointer;
   padding: 8px 16px;
 }
+
+.btn-filter {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.btn-all, .btn-active, .btn-complete {
+  font-size: 1rem;
+  color: #fff;
+  border: 2px solid rgb(92, 7, 228);
+  background-color: rgb(92, 7, 228);
+  padding: 8px 24px;
+  margin-right: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 10px 10px rgb(55, 0, 143);
+
+}
+
+.btn-all:hover, .btn-active:hover, .btn-complete:hover {
+  border: 2px solid rgb(137, 64, 255);
+  background-color: rgb(137, 64, 255);
+}
+
+.btn-all:active, .btn-active:active, .btn-complete:active {
+  border: 2px solid rgb(82, 22, 179);
+  background-color: rgb(82, 22, 179);
+}

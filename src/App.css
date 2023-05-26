@@ -49,3 +49,59 @@ form input {
   border: 2px solid rgb(82, 22, 179);
   background-color: rgb(82, 22, 179);
 }
+
+.wrapper-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:  rgb(119, 54, 224);
+  box-shadow: 10px 10px rgb(55, 0, 143);
+  color: #fff;
+  border-radius: 4px;
+  padding: 2rem;
+  font-size: 24px;
+  width: 50%;
+  margin-bottom: 20px;
+  overflow: auto;
+}
+
+.btn-list {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-del {
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.btn-del:hover {
+  background-color: rgb(137, 64, 255);
+  border-radius: 4px;
+}
+
+.btn-del:active {
+  background-color: rgb(82, 22, 179);
+}
+
+.btn-edit:hover {
+  background-color: rgb(137, 64, 255);
+  border-radius: 4px;
+}
+
+.btn-edit:active {
+  background-color: rgb(82, 22, 179);
+}
+
+.btn-edit {
+  cursor: pointer;
+  padding: 8px 16px;
+}

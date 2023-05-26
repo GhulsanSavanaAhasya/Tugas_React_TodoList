@@ -80,14 +80,15 @@ function TodoList({
       <div className="container-input">
         <div className="wrapper">
           <h1>What's the plan for today?</h1>
-          <form>
+          <form onSubmit={handleClick}>
             <input
               type="text"
               onChange={handleChange}
               value={title}
               placeholder="Input Your Todo Here!"
+              required
             />
-            <button className="btn-add" onClick={handleClick}>
+            <button className="btn-add">
               {edit ? "Edit Todo" : "Add Todo"}
             </button>
           </form>
@@ -95,9 +96,15 @@ function TodoList({
       </div>
 
       <div className="btn-filter">
-        <button onClick={() => setFilter("")} className="btn-all">All</button>
-        <button onClick={() => setFilter("Active")} className="btn-active">Active</button>
-        <button onClick={() => setFilter("Complete")} className="btn-complete">Complete</button>
+        <button onClick={() => setFilter("")} className="btn-all">
+          All
+        </button>
+        <button onClick={() => setFilter("Active")} className="btn-active">
+          Active
+        </button>
+        <button onClick={() => setFilter("Complete")} className="btn-complete">
+          Complete
+        </button>
       </div>
 
       {todoListFilter &&

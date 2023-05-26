@@ -1,45 +1,71 @@
-import { useState } from "react"
-import { useDispatch } from "react-redux"
-import { addItem } from "../redux/actions/index"
+import { connect } from "react-redux"
+import { addItem, editItem, setTitle } from "../redux/actions";
 
-function TodoList(){
-    const dispatch = useDispatch()
-    const [addInputList, setInputList] = useState("")
+function TodoList({
+  title,
+  addItem,
+  editItem,
+  edit,
+  setTitle,
+  todoList,
+}) {
+  const handleChange = (event) => {
+    const title = event.target.value;
+    setTitle(title)
+  };
 
-    const handleClick = (e) => {
-        e.preventDefault()
-
-        let newItem = {
-            id: Date.now(),
-            title: addInputList,
-            completed: false,
-        }
-        dispatch(addItem(newItem))
-        console.log(addInputList)
-
-        setInputList("")
+  const handleClick = (event) => {
+    event.preventDefault()
+    if (title.length === 0) {
+      return;
     }
+    if (edit) {
+      editItem();
+    } else {
+      addItem();
+      console.log(title);
+    }
+  }
 
-    return (
-      <>
-        <div className="container-input">
-          <div className="wrapper">
-            <h1>Todo List App</h1>
-            <form onSubmit={handleClick}>
-              <input
-                type="text"
-                value={addInputList}
-                onChange={(e) => setInputList(e.target.value)}
-                placeholder="Input Your Todo Here!"
-                required
-              />
-              <button className="btn-add">Add Todo</button>
-            </form>
-          </div>
+  console.log(todoList)
+
+  return (
+    <>
+      <div className="container-input">
+        <div className="wrapper">
+          <h1>Todo List App</h1>
+          <form>
+            <input
+              type="text"
+              onChange={handleChange}
+              value={title}
+              placeholder="Input Your Todo Here!"
+            />
+            <button className="btn-add" onClick={handleClick}>
+              {edit ? "Edit Todo" : "Add Todo"}
+            </button>
+          </form>
         </div>
-
-      </>
-    );
+      </div>
+    </>
+  );
 }
 
-export default TodoList
+const mapStateToProps = (state) => {
+  return {
+    edit: state.edit,
+    title: state.title,
+    todoList: state.todos,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItem: () => dispatch(addItem()),
+    editItem: () => dispatch(editItem()),
+    setItem: (item) => dispatch(setItem(item)),
+    setTitle: (title) => dispatch(setTitle(title)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList)

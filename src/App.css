@@ -60,7 +60,7 @@ form input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:  rgb(119, 54, 224);
+  background-color: rgb(119, 54, 224);
   box-shadow: 10px 10px rgb(55, 0, 143);
   color: #fff;
   border-radius: 4px;
@@ -78,32 +78,21 @@ form input {
   gap: 1rem;
 }
 
-.btn-del {
+.btn-del,
+.btn-edit {
   cursor: pointer;
   padding: 8px 16px;
 }
 
-.btn-del:hover {
-  background-color: rgb(137, 64, 255);
-  border-radius: 4px;
-}
-
-.btn-del:active {
-  background-color: rgb(82, 22, 179);
-}
-
+.btn-del:hover,
 .btn-edit:hover {
   background-color: rgb(137, 64, 255);
   border-radius: 4px;
 }
 
+.btn-del:active,
 .btn-edit:active {
   background-color: rgb(82, 22, 179);
-}
-
-.btn-edit {
-  cursor: pointer;
-  padding: 8px 16px;
 }
 
 .btn-filter {
@@ -111,7 +100,9 @@ form input {
   margin-bottom: 2rem;
 }
 
-.btn-all, .btn-active, .btn-complete {
+.btn-all,
+.btn-active,
+.btn-complete {
   font-size: 1rem;
   color: #fff;
   border: 2px solid rgb(92, 7, 228);
@@ -121,15 +112,105 @@ form input {
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 10px 10px rgb(55, 0, 143);
-
 }
 
-.btn-all:hover, .btn-active:hover, .btn-complete:hover {
+.btn-all:hover,
+.btn-active:hover,
+.btn-complete:hover {
   border: 2px solid rgb(137, 64, 255);
   background-color: rgb(137, 64, 255);
 }
 
-.btn-all:active, .btn-active:active, .btn-complete:active {
+.btn-all:active,
+.btn-active:active,
+.btn-complete:active {
   border: 2px solid rgb(82, 22, 179);
   background-color: rgb(82, 22, 179);
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+  }
+
+  form input {
+    width: 70%;
+    padding: 0.8rem;
+    border: 2px solid rgb(92, 7, 228);
+    outline: none;
+    border-radius: 4px;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    font-size: 12px;
+    box-shadow: 5px 5px rgb(55, 0, 143);
+  }
+
+  .btn-add {
+    font-size: 12px;
+    color: #fff;
+    border: 2px solid rgb(92, 7, 228);
+    background-color: rgb(92, 7, 228);
+    padding: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 5px 5px rgb(55, 0, 143);
+  }
+
+  .btn-add:hover {
+    border: 2px solid rgb(137, 64, 255);
+    background-color: rgb(137, 64, 255);
+  }
+
+  .btn-add:active {
+    border: 2px solid rgb(82, 22, 179);
+    background-color: rgb(82, 22, 179);
+  }
+
+  .card-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(119, 54, 224);
+    box-shadow: 5px 5px rgb(55, 0, 143);
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.8rem;
+    font-size: 20px;
+    width: 90%;
+    margin-bottom: 20px;
+    overflow: auto;
+  }
+
+  .btn-all,
+  .btn-active,
+  .btn-complete {
+    font-size: 12px;
+    color: #fff;
+    border: 2px solid rgb(92, 7, 228);
+    background-color: rgb(92, 7, 228);
+    padding: 6px 20px;
+    margin-right: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 5px 5px rgb(55, 0, 143);
+  }
+
+  .btn-list {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-del:hover,
+  .btn-edit:hover {
+    background-color: rgb(137, 64, 255);
+    border-radius: 4px;
+  }
+
+  .btn-del:active,
+  .btn-edit:active {
+    background-color: rgb(82, 22, 179);
+  }
 }

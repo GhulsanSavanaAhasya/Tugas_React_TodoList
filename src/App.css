@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;700&family=Poppins:wght@100;300;400;700;900&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container-input {
@@ -136,13 +139,14 @@ form input {
   }
 
   form input {
-    width: 70%;
+    width: 100%;
     padding: 0.8rem;
     border: 2px solid rgb(92, 7, 228);
     outline: none;
     border-radius: 4px;
     margin-right: 1rem;
     margin-top: 2rem;
+    margin-bottom: 1.2rem;
     font-size: 12px;
     box-shadow: 5px 5px rgb(55, 0, 143);
   }

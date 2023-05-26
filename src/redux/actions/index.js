@@ -1,8 +1,28 @@
-import { ADD_ITEM } from "./actionTypes"
+import { ADD_ITEM, EDIT_ITEM, SET_ITEM, SET_TITLE } from "./actionTypes"
 
-export const addItem = (newItem) => {
+export const addItem = () => {
     return {
         type: ADD_ITEM,
-        payload: newItem,
+    }
+}
+
+export const setTitle = (title) => {
+    return{
+        type: SET_TITLE,
+        title: title,
+    }
+}
+
+export const setItem = (item) => {
+    return{
+        type: SET_ITEM,
+        item: item,
+    }
+}
+
+export const editItem = (item) => {
+    return{
+        type: EDIT_ITEM,
+        item: item,
     }
 }

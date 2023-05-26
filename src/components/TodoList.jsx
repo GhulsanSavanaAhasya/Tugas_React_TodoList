@@ -79,7 +79,7 @@ function TodoList({
     <>
       <div className="container-input">
         <div className="wrapper">
-          <h1>Todo List App</h1>
+          <h1>What's the plan for today?</h1>
           <form>
             <input
               type="text"

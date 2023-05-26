@@ -1,4 +1,4 @@
-import { ADD_ITEM, EDIT_ITEM, SET_ITEM, SET_TITLE } from "./actionTypes"
+import { ADD_ITEM, DEL_ITEM, EDIT_ITEM, SET_DONE, SET_EDIT, SET_ITEM, SET_TITLE } from "./actionTypes"
 
 export const addItem = () => {
     return {
@@ -13,16 +13,35 @@ export const setTitle = (title) => {
     }
 }
 
-export const setItem = (item) => {
+export const setItem = (todo) => {
     return{
         type: SET_ITEM,
-        item: item,
+        todo: todo,
     }
 }
 
-export const editItem = (item) => {
+export const editItem = (todo) => {
     return{
         type: EDIT_ITEM,
-        item: item,
+        todo: todo,
+    }
+}
+
+export const delItem = (todo) => {
+    return {
+        type: DEL_ITEM,
+        todo: todo,
+    }
+}
+
+export const setDone = () => {
+    return {
+        type: SET_DONE,
+    }
+}
+
+export const setEdit = () => {
+    return {
+        type: SET_EDIT,
     }
 }

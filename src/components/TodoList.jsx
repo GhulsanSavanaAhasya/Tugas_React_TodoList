@@ -14,6 +14,7 @@ import {
   GrTrash,
   GrEdit,
 } from "react-icons/gr";
+import { useState } from "react";
 
 function TodoList({
   title,
@@ -27,6 +28,18 @@ function TodoList({
   setEdit,
   delItem,
 }) {
+  const [filter, setFilter] = useState("");
+  const todoListFilter = todoList.filter((item) => {
+    if (filter === "Active" && item.isDone === false) {
+      return item;
+    } else if (filter === "Complete" && item.isDone === true) {
+      return item;
+    } else if (filter === "") {
+      return item;
+    }
+  });
+  console.log(todoList);
+
   const handleChange = (event) => {
     const title = event.target.value;
     setTitle(title);
@@ -34,14 +47,13 @@ function TodoList({
 
   const handleClick = (event) => {
     event.preventDefault();
-    if (title.length === 0) {
+    if (title.length === "") {
       return;
     }
     if (edit) {
       editItem();
     } else {
       addItem();
-      console.log(title);
     }
   };
 
@@ -82,8 +94,14 @@ function TodoList({
         </div>
       </div>
 
-      {todoList &&
-        todoList.map((todo) => {
+      <div className="btn-filter">
+        <button onClick={() => setFilter("")} className="btn-all">All</button>
+        <button onClick={() => setFilter("Active")} className="btn-active">Active</button>
+        <button onClick={() => setFilter("Complete")} className="btn-complete">Complete</button>
+      </div>
+
+      {todoListFilter &&
+        todoListFilter.map((todo) => {
           return (
             <div key={todo.id} className="wrapper-list">
               <div className="card-list">
